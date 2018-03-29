@@ -30,6 +30,10 @@ public class GCD {
 				int num2 = scanner.nextInt();
 				findGCDTWoNum(num1, num2);
 			}
+			
+			System.out.println();
+			System.out.println("[1] 숫자의 약수 구하기, [2] 2개의 숫자에서 공통으로 해당하는 약수 구하기, [3] 2개의 숫자의 최대공약수 구하기, [0] 끝내기 ");
+			mode = scanner.nextInt();
 		}
 		
 		if(mode >=4) {
@@ -38,6 +42,42 @@ public class GCD {
 			System.out.println("---------------------------");
 		}
 		
+	}
+
+	private static void findGCDTWoNum(int num1, int num2) {
+		int num = num1 > num2 ? num1 : num2;
+		
+		int result = -1;
+		
+		for(int i=1; i<=num; i++) {
+			if(num1%i == 0 && num2%i == 0 && result < i) {
+				result = i;
+			}
+		}
+		
+		System.out.println(result);
+	}
+
+	private static void findCDTwoNum(int num1, int num2) {
+		
+		int num = num1 > num2 ? num1 : num2;
+		
+		for(int i=1; i<= num; i++) {
+			 if(num1%i == 0 && num2%i== 0) {
+				 System.out.print(i+" ");
+			 }
+		}
+		System.out.println();
+	}
+
+	private static void findCD(int num) {
+		
+		for(int i=1; i<=num; i++) {
+			if(num%i == 0) {
+				System.out.print(i+" ");
+			}
+		}
+		System.out.println();
 	}
 
 }
